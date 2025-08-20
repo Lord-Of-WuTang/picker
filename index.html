@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lunch Picker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+    #menuDisplay {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🥪 Lunch Picker Menu</h1>
+
+  <input type="text" id="lunchItem" placeholder="Enter lunch item" />
+  <button onclick="addToEnd()">Add to End</button>
+  <button onclick="addToStart()">Add to Start</button>
+  <button onclick="removeFirst()">Remove First</button>
+  <button onclick="removeLast()">Remove Last</button>
+  <button onclick="getRandom()">Pick Random</button>
+  <button onclick="showMenu()">Show Menu</button>
+
+  <div id="menuDisplay">The menu is empty.</div>
+
+  <script>
+    let lunches = [];
+
+    function addToEnd() {
+      const item = document.getElementById('lunchItem').value;
+      if (item) {
+        lunches.push(item);
+        alert(`${item} added to the end of the lunch menu.`);
+        showMenu();
+      }
+    }
+
+    function addToStart() {
+      const item = document.getElementById('lunchItem').value;
+      if (item) {
+        lunches.unshift(item);
+        alert(`${item} added to the start of the lunch menu.`);
+        showMenu();
+      }
+    }
+
+    function removeLast() {
+      if (lunches.length === 0) {
+        alert("No lunches to remove.");
+      } else {
+        const removed = lunches.pop();
+        alert(`${removed} removed from the end of the lunch menu.`);
+        showMenu();
+      }
+    }
+
+    function removeFirst() {
+      if (lunches.length === 0) {
+        alert("No lunches to remove.");
+      } else {
+        const removed = lunches.shift();
+        alert(`${removed} removed from the start of the lunch menu.`);
+        showMenu();
+      }
+    }
+
+    function getRandom() {
+      if (lunches.length === 0) {
+        alert("No lunches available.");
+      } else {
+        const randomItem = lunches[Math.floor(Math.random() * lunches.length)];
+        alert(`Randomly selected lunch: ${randomItem}`);
+      }
+    }
+
+    function showMenu() {
+      const display = document.getElementById('menuDisplay');
+      display.innerHTML = lunches.length
+        ? `Menu items: ${lunches.join(', ')}`
+        : 'The menu is empty.';
+    }
+  </script>
+</body>
+</html>
