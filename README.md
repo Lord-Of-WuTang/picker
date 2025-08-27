@@ -29,4 +29,5 @@ This project is a simple lunch picker tool built with HTML, CSS, and JavaScript.
 
 ## Author
 
-Made by MOKA! with 💡 and 🍱!
+Made by MOKA!
+
