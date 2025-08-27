@@ -1,6 +1,6 @@
 # 🍽️ Lunch Picker Program
 
-This project is a simple lunch picker tool built with HTML, CSS, and JavaScript. It helps users manage a list of lunch items—adding, removing, and selecting random options.
+This project is a simple lunch picker tool built with HTML, CSS, and JavaScript. It assists users in managing a list of lunch items—adding, removing, and selecting random options.
 
 ## Features
 
@@ -30,4 +30,5 @@ This project is a simple lunch picker tool built with HTML, CSS, and JavaScript.
 ## Author
 
 Made by MOKA!
+
 
